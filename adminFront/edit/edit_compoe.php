@@ -32,8 +32,8 @@ $result_grupos_funcionais = $mysqli->query($sql_grupos_funcionais);
 <body>
     <div class="container mt-5">
         <h2>Edit Composto</h2>
-        <form action="../../adminBack/update/update_composto.php" method="post">
-            <input type="hidden" name="id" value="<?php echo $composto['id']; ?>">
+        <form action="../../adminBack/update/update_composto.php" method="post" enctype="multipart/form-data">
+        <input type="hidden" name="id" value="<?php echo $composto['id']; ?>">
             <div class="mb-3">
                 <label for="nome" class="form-label">Nome Composto</label>
                 <input type="text" class="form-control" id="nome" name="nome" value="<?php echo $composto['nome']; ?>" required>
@@ -46,6 +46,10 @@ $result_grupos_funcionais = $mysqli->query($sql_grupos_funcionais);
                 <label for="estrutura_molecular" class="form-label">Estrutura Molecular</label>
                 <input type="text" class="form-control" id="estrutura_molecular" name="estrutura_molecular" value="<?php echo $composto['estrutura_molecular']; ?>" required>
             </div>
+            <div class="mb-3">
+                <label for="imagem" class="form-label">Imagem</label>
+                <input type="file" class="form-control" id="imagem" name="imagem"> <!-- file input for imagem -->
+                </div>
             <div class="mb-3">
                 <label for="grupo_funcional_id" class="form-label">Grupo Funcional</label>
                 <select class="form-control" id="grupo_funcional_id" name="grupo_funcional_id" required>

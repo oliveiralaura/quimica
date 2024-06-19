@@ -22,7 +22,7 @@ if (!empty($email) && !empty($senha)) {
         // Verificar a senha usando password_verify()
         if (password_verify($senha, $senha_hash)) {
             $_SESSION['email'] = $email;
-            $_SESSION['id'] = $id;
+            $_SESSION['id'] = $id;  // Salvar o ID do usuário na sessão
             $_SESSION['tipo'] = $tipo;
 
             if ($tipo === 'admin') {
